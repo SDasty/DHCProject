@@ -19,6 +19,11 @@ void configureServerAddress(struct sockaddr_in *serverAddress, int socketFd) {
     serverAddress->sin_addr.s_addr = inet_addr("255.255.255.255");
     memset(&(serverAddress->sin_zero), 0, 8);
 
+    int opt = 1;
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    perror("setsockopt failed");
+    }
+
     int broadcastPermission = 1;
     if (setsockopt(socketFd, SOL_SOCKET, SO_BROADCAST, &broadcastPermission, sizeof(broadcastPermission)) < 0) {
         perror("Error enabling broadcast option");
