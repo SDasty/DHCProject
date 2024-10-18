@@ -10,8 +10,8 @@
 #include <arpa/inet.h>
 #include <sys/types.h>
 
-#define LISTEN_PORT 67   
-#define ANSWER_PORT 1068
+#define LISTEN_PORT 50001
+#define ANSWER_PORT 50000
 #define BUFFER_LEN 1024
 
 struct dhcpMessage {

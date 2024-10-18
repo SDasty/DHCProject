@@ -11,8 +11,8 @@
 #include <sys/types.h>
 #include <time.h>
 
-#define ANSWER_PORT 67   
-#define LISTEN_PORT  1068
+#define ANSWER_PORT 50000
+#define LISTEN_PORT  50001
 #define BUFFER_LEN 2048
 #define MAX_ATTEMPTS 5
 #define TIMEOUT 2
