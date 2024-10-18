@@ -26,10 +26,10 @@ void configureServerAddress(struct sockaddr_in *serverAddress, int socketFd) {
     memset(&(serverAddress->sin_zero), 0, 8);
 
     int opt = 1;
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
     perror("setsockopt failed");
     }
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(int)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt)) < 0) {
     perror("setsockopt(SO_REUSEPORT) failed");
     }
 
@@ -47,10 +47,10 @@ void configureClientAddress(struct sockaddr_in *clientAddress, int socketFd) {
     memset(&(clientAddress->sin_zero), 0, 8);
 
     int opt = 1;
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
     perror("setsockopt failed");
     }
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(int)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt)) < 0) {
     perror("setsockopt(SO_REUSEPORT) failed");
     }
 
