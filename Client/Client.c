@@ -23,6 +23,9 @@ void configureServerAddress(struct sockaddr_in *serverAddress, int socketFd) {
     if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
     perror("setsockopt failed");
     }
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(int)) < 0) {
+    perror("setsockopt(SO_REUSEPORT) failed");
+    }
 
     int broadcastPermission = 1;
     if (setsockopt(socketFd, SOL_SOCKET, SO_BROADCAST, &broadcastPermission, sizeof(broadcastPermission)) < 0) {
@@ -40,6 +43,9 @@ void configureClientAddress(struct sockaddr_in *clientAddress, int socketFd) {
     int opt = 1;
     if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
     perror("setsockopt failed");
+    }
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(int)) < 0) {
+    perror("setsockopt(SO_REUSEPORT) failed");
     }
 
     if (bind(socketFd, (struct sockaddr *)clientAddress, sizeof(struct sockaddr_in)) == -1) {
