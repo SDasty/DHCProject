@@ -32,6 +32,11 @@ void configureClientAddress(struct sockaddr_in *clientAddress, int socketFd) {
     clientAddress->sin_addr.s_addr = INADDR_ANY;
     memset(&(clientAddress->sin_zero), 0, 8);
 
+    int opt = 1;
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    perror("setsockopt failed");
+    }
+
     if (bind(socketFd, (struct sockaddr *)clientAddress, sizeof(struct sockaddr_in)) == -1) {
         perror("bind failed");
         close(socketFd);
