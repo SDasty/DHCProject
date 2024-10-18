@@ -16,6 +16,7 @@ int main() {
 
     while (1) {
         if (!receiveDhcpDiscover(socketFd, &server, &addrLen, buffer)){
+            printf("Waitng for clients...")
             continue;
         }
         sendDhcpOffer(socketFd, &client, addrLen);
