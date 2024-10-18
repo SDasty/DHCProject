@@ -12,7 +12,7 @@
 #include <time.h>
 
 #define ANSWER_PORT 67   
-#define LISTEN_PORT  68
+#define LISTEN_PORT  69
 #define BUFFER_LEN 2048
 #define MAX_ATTEMPTS 5
 #define TIMEOUT 2

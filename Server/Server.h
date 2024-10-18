@@ -11,7 +11,7 @@
 #include <sys/types.h>
 
 #define LISTEN_PORT 67   
-#define ANSWER_PORT 68
+#define ANSWER_PORT 69
 #define BUFFER_LEN 1024
 
 struct dhcpMessage {
