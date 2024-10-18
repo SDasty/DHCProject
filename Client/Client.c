@@ -11,8 +11,8 @@ int createSocket() {
         exit(1);
     }
     struct linger sl;
-    sl.l_onoff = 1;  // Activar linger
-    sl.l_linger = 0; // Cerrar de inmediato
+    sl.l_onoff = 1;
+    sl.l_linger = 0;
     if (setsockopt(socketFd, SOL_SOCKET, SO_LINGER, &sl, sizeof(sl)) < 0) {
         perror("setsockopt(SO_LINGER) failed");
     }

@@ -16,8 +16,11 @@ void setupServer(int socketFd , struct sockaddr_in *server) {
     memset(&(server->sin_zero), 0, 8);
 
     if (bind(socketFd, (struct sockaddr *)server, sizeof(struct sockaddr)) == -1) {
+        printf("Fallo al intentar vincular en el puerto %d\n", LISTEN_PORT);
         perror("bind");
         exit(1);
+    }else{
+        printf("Servidor vinculado correctamente en el puerto %d\n", LISTEN_PORT);
     }
 }
 
