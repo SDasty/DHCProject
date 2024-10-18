@@ -20,7 +20,7 @@ void configureServerAddress(struct sockaddr_in *serverAddress, int socketFd) {
     memset(&(serverAddress->sin_zero), 0, 8);
 
     int opt = 1;
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
     perror("setsockopt failed");
     }
 
@@ -38,7 +38,7 @@ void configureClientAddress(struct sockaddr_in *clientAddress, int socketFd) {
     memset(&(clientAddress->sin_zero), 0, 8);
 
     int opt = 1;
-    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+    if (setsockopt(socketFd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(int)) < 0) {
     perror("setsockopt failed");
     }
 
