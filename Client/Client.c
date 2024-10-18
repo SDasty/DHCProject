@@ -10,6 +10,12 @@ int createSocket() {
         perror("Socket creation failed");
         exit(1);
     }
+    struct linger sl;
+    sl.l_onoff = 1;  // Activar linger
+    sl.l_linger = 0; // Cerrar de inmediato
+    if (setsockopt(socketFd, SOL_SOCKET, SO_LINGER, &sl, sizeof(sl)) < 0) {
+        perror("setsockopt(SO_LINGER) failed");
+    }
     return socketFd;
 }
 
