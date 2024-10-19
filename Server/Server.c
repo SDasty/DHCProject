@@ -27,7 +27,7 @@ void setupServer(int socketFd , struct sockaddr_in *server) {
 void setupBroadcast(int socketFd, struct sockaddr_in *broadcast){
     broadcast->sin_family = AF_INET;
     broadcast->sin_port = htons(ANSWER_PORT);
-    broadcast->sin_addr.s_addr = INADRR_ANY;
+    broadcast->sin_addr.s_addr = INADDR_ANY;
     memset(&(broadcast->sin_zero), 0, 8);
 
     int broadcastEnable = 1;
