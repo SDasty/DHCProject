@@ -10,7 +10,7 @@
 ### Conexión entre cliente y servidor entre segmentos de red separados.
 
 ##Aspectos no logrados
-Conexión entre cliente y servidor en un mismo segmento de red.
+###Conexión entre cliente y servidor en un mismo segmento de red.
 
 ##Conclusiones
 
