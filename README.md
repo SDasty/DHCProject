@@ -19,8 +19,6 @@ Tanto el cliente como el server tienen la creación de sus sockets respectivos. 
 ## Aspectos no logrados
 ### Conexión entre cliente y servidor entre segmentos de red separados
 
-## Conclusiones
-### Este proyecto conllevó muchas dificultades debido al uso pobre del tiempo y por lo tanto no fue posible alcanzar la meta deseada planteada para el mismo, se espera que para futuras entregas la asignación de trabajos sea satisfactoria así como las dudas presentadas durante el desarrollo.
 
 ## Referencias
 https://pubs.opengroup.org/onlinepubs/007904875/functions/recvfrom.html
